@@ -1,6 +1,7 @@
   @File:        jquery.formLabels.js
-  @Version:     1.1
+  @Version:     1.2
   @Author:      Andrei Zharov (www.o2v.net) - Senior Software Engineer at Nokia
+                Gray Delacluyse
 
   @Requires:    jQuery v1.9 & jQueryUI v1.10
   @Usage:       $.fn.formLabels() or $("form").formLabels()
@@ -12,4 +13,4 @@
 
   @License: Released under the MIT license
 
-  Link to the demo: <http://o2v.net/demo/formLabels>
+  v1.2 - Build labels for all fields, even if they start with a value
