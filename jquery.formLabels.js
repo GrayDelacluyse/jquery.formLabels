@@ -1,8 +1,9 @@
 /*global jQuery, window*/
 /*
  * @File:        jquery.formLabels.js
- * @Version:     1.1
+ * @Version:     1.2
  * @Author:      Andrei Zharov (www.o2v.net) - Senior Software Engineer at Nokia
+ *               v1.2 - Gray Delacluyse
  *
  * @Requires:    jQuery v1.9 & jQueryUI v1.9.1
  * @Usage:       $.fn.formLabels()
@@ -66,7 +67,8 @@
                 var paddings, formLabel, label, labelParent, tagName,
                     $this = $(this);
 
-                if (this.value === '' && (label = this.title) !== "") {
+                if ((label = this.title) !== "") {
+                    var hasContent = (this.value !== '');
                     if (opts.labelParent === "form") {
                         labelParent = $this.closest("form");
                         tagName = "<label/>";
@@ -132,6 +134,11 @@
                             });
                         },
                         collision: 'none'
+                    });
+                    
+                    // This needs to be after position or the layout gets weird
+                    formLabel.css({
+                        'display' : (hasContent) ? 'none' : 'block'
                     });
 
                     $this.data({
